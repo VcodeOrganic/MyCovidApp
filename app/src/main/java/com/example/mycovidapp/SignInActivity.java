@@ -64,5 +64,10 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        if(auth.getCurrentUser()!= null){
+            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 }

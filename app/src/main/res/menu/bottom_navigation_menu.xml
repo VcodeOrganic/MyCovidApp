@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboard"
+        android:title="Dashboard"
+        android:enabled="true"
+        android:icon="@drawable/ic_dashboard"
+        />
+    <item
+        android:id="@+id/resources"
+        android:enabled="true"
+        android:icon="@drawable/ic_contest"
+        android:title="Resources"
+        />
+    <item
+        android:id="@+id/doctors"
+        android:enabled="true"
+        android:title="Doctors"
+        android:icon="@drawable/ic_rating"
+        />
+
+</menu>

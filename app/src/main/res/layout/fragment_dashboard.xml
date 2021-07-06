@@ -11,11 +11,13 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
-        android:gravity="center"
         android:id="@+id/imageView2"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/hospital_dashboard" />
+        android:gravity="center"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:src="@drawable/hospital_svg_foreground" />
 
     <TextView
         android:id="@+id/textName"

@@ -1,9 +1,9 @@
 package com.example.mycovidapp.Models;
 
 public class Institutes {
-    String InstiName, Instiphone, Instimail, Instipass, InstiID,  Instipincode, InstiAddress;
+    String InstiName, Instiphone, Instimail, Instipass, InstiID,  Instipincode, InstiAddress, KycStatus;
 
-    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instiID, String instipincode, String instiAddress) {
+    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instiID, String instipincode, String instiAddress, String kycStatus) {
         InstiName = instiName;
         Instiphone = instiphone;
         Instimail = instimail;
@@ -11,6 +11,7 @@ public class Institutes {
         InstiID = instiID;
         Instipincode = instipincode;
         InstiAddress = instiAddress;
+        KycStatus = kycStatus;
     }
 
     public Institutes(){}
@@ -22,6 +23,24 @@ public class Institutes {
         Instipass = instipass;
         Instipincode = instipincode;
         InstiAddress = instiAddress;
+    }
+
+    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instipincode, String instiAddress,String kycStatus) {
+        InstiName = instiName;
+        Instiphone = instiphone;
+        Instimail = instimail;
+        Instipass = instipass;
+        Instipincode = instipincode;
+        InstiAddress = instiAddress;
+        KycStatus = kycStatus;
+    }
+
+    public String getKycStatus() {
+        return KycStatus;
+    }
+
+    public void setKycStatus(String kycStatus) {
+        KycStatus = kycStatus;
     }
 
     public String getInstiName() {

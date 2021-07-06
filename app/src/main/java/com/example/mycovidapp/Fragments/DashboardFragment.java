@@ -1,14 +1,34 @@
 package com.example.mycovidapp.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.mycovidapp.MainActivity;
+import com.example.mycovidapp.Models.Institutes;
 import com.example.mycovidapp.R;
+import com.example.mycovidapp.SignInInstitute;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +45,8 @@ public class DashboardFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private DatabaseReference mDatabase;
+    private String Displayname, DisplayAddress, DisplayMail, DisplayPhone, DisplayPincode, DisplayKYCStatus;
 
     public DashboardFragment() {
         // Required empty public constructor
@@ -62,6 +84,92 @@ public class DashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        //return inflater.inflate(R.layout.fragment_dashboard, container, false);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        if(user!=null){
+
+            //Toast.makeText(getActivity(), "fef", Toast.LENGTH_SHORT).show();
+            mDatabase.child("Institutes").child(user.getUid()).addValueEventListener(new ValueEventListener() {
+
+
+
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.d("firebase1", "Name2: ");
+                    Displayname = dataSnapshot.child("instiName").getValue(String.class);
+                    DisplayAddress = dataSnapshot.child("instiAddress").getValue(String.class);
+                    DisplayMail = dataSnapshot.child("instimail").getValue(String.class);
+                    DisplayPhone = dataSnapshot.child("instiphone").getValue(String.class);
+                    DisplayPincode = dataSnapshot.child("instipincode").getValue(String.class);
+                    DisplayKYCStatus = dataSnapshot.child("kycStatus").getValue(String.class);
+
+                    Log.d("firebase1", "Name: " + DisplayKYCStatus);
+
+                    TextView setName = (TextView) root.findViewById(R.id.textName);
+                    setName.setText(Displayname);
+
+                    //Log.d("firebase1", "KYC: " + DisplayKYCStatus);
+                    TextView setKYC = (TextView) root.findViewById(R.id.textKYC);
+                    setKYC.setText(DisplayKYCStatus);
+
+                    TextView setPhone = (TextView) root.findViewById(R.id.textPhone);
+                    setPhone.setText(DisplayPhone);
+                    TextView setEmail = (TextView) root.findViewById(R.id.textEmail);
+                    setEmail.setText(DisplayMail);
+                    TextView setAddress = (TextView) root.findViewById(R.id.textAddress);
+                    setAddress.setText(DisplayAddress);
+                    TextView setPincode = (TextView) root.findViewById(R.id.textPincode);
+                    setPincode.setText(DisplayPincode);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            });
+
+
+
+
+
+
+//            String name = user.getDisplayName();
+//            mDatabase.child("Institutes").child(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//                @Override
+//                public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                    if (!task.isSuccessful()) {
+//                        Log.e("firebase", "Error getting data", task.getException());
+//                    }
+//                    else {
+//                        Log.d("firebase", String.valueOf(task.getResult().getValue()));
+//                        String instiVal = String.valueOf(task.getResult().getValue());
+//                        Log.d("firebase", instiVal);
+//                        String[] words=instiVal.split("insti");
+//
+//                        ArrayList<String> scripts = new ArrayList<String>();
+//                        for(String w:words){
+//                            Log.d("firebase", w);
+//                            scripts.add(w.substring(w.indexOf("=") + 1, w.indexOf(",")));
+//                        }
+//
+//                        String DisplayName = scripts.get(0);
+//                        String DisplayPhone = scripts.get(1);
+//                        String DisplayMail = scripts.get(2);
+//                        String DisplayAddress = scripts.get(4);
+//                        String DisplayPincode = scripts.get(5);
+//
+//
+//
+//                    }
+//                }
+//            });
+        }
+        else{
+            Intent intent = new Intent(getActivity(), SignInInstitute.class);
+            startActivity(intent);
+        }
+
+        return root;
     }
 }

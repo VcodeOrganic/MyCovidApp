@@ -56,11 +56,15 @@ public class SignUpInstitute extends AppCompatActivity {
                                     binding.etInstiEmail.getText().toString(),
                                     binding.etInstiPass.getText().toString(),
                                     binding.etInstiPincode.getText().toString(),
-                                    binding.etInstiAddress.getText().toString()
+                                    binding.etInstiAddress.getText().toString(),
+                                    "NO"
                             );
                             String id = task.getResult().getUser().getUid();
                             database.getReference().child("Institutes").child(id).setValue(institute);
                             Toast.makeText(SignUpInstitute.this, "Institute registered. Welcome to the family", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(SignUpInstitute.this,MainActivity.class);
+                            startActivity(intent);
                         }
                         else{
                             Toast.makeText(SignUpInstitute.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

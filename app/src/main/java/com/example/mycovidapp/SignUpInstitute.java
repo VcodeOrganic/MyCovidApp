@@ -57,7 +57,12 @@ public class SignUpInstitute extends AppCompatActivity {
                                     binding.etInstiPass.getText().toString(),
                                     binding.etInstiPincode.getText().toString(),
                                     binding.etInstiAddress.getText().toString(),
-                                    "NO"
+                                    "NO",
+                                    "0",
+                                    "0",
+                                    "0",
+                                    "0",
+                                    "0"
                             );
                             String id = task.getResult().getUser().getUid();
                             database.getReference().child("Institutes").child(id).setValue(institute);

@@ -1,7 +1,7 @@
 package com.example.mycovidapp.Models;
 
 public class Institutes {
-    String InstiName, Instiphone, Instimail, Instipass, InstiID,  Instipincode, InstiAddress, KycStatus;
+    String InstiName, Instiphone, Instimail, Instipass, InstiID,  Instipincode, InstiAddress, KycStatus, CurrVaccine, CurrOxygen, CurrICUBeds, CurrNBeds, CurrPlasma;
 
     public Institutes(String instiName, String instiphone, String instimail, String instipass, String instiID, String instipincode, String instiAddress, String kycStatus) {
         InstiName = instiName;
@@ -13,7 +13,6 @@ public class Institutes {
         InstiAddress = instiAddress;
         KycStatus = kycStatus;
     }
-
     public Institutes(){}
 
     public Institutes(String instiName, String instiphone, String instimail, String instipass, String instipincode, String instiAddress) {
@@ -25,7 +24,7 @@ public class Institutes {
         InstiAddress = instiAddress;
     }
 
-    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instipincode, String instiAddress,String kycStatus) {
+    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instipincode, String instiAddress,String kycStatus, String currVaccine, String currOxygen, String currICUBeds, String currNBeds, String currPlasma) {
         InstiName = instiName;
         Instiphone = instiphone;
         Instimail = instimail;
@@ -33,6 +32,51 @@ public class Institutes {
         Instipincode = instipincode;
         InstiAddress = instiAddress;
         KycStatus = kycStatus;
+        CurrVaccine=currVaccine;
+        CurrOxygen=currOxygen;
+        CurrICUBeds=currICUBeds;
+        CurrNBeds=currNBeds;
+        CurrPlasma=currPlasma;
+    }
+
+    public String getCurrICUBeds() {
+        return CurrICUBeds;
+    }
+
+    public void setCurrICUBeds(String currICUBeds) {
+        CurrICUBeds = currICUBeds;
+    }
+
+    public String getCurrNBeds() {
+        return CurrNBeds;
+    }
+
+    public void setCurrNBeds(String currNBeds) {
+        CurrNBeds = currNBeds;
+    }
+
+    public String getCurrVaccine() {
+        return CurrVaccine;
+    }
+
+    public void setCurrVaccine(String currVaccine) {
+        CurrVaccine = currVaccine;
+    }
+
+    public String getCurrOxygen() {
+        return CurrOxygen;
+    }
+
+    public void setCurrOxygen(String currOxygen) {
+        CurrOxygen = currOxygen;
+    }
+
+    public String getCurrPlasma() {
+        return CurrPlasma;
+    }
+
+    public void setCurrPlasma(String currPlasma) {
+        CurrPlasma = currPlasma;
     }
 
     public String getKycStatus() {

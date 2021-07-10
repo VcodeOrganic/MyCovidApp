@@ -96,29 +96,16 @@ public class ResourcesFragmentPatient extends Fragment {
 
             @Override
             protected void onBindViewHolder(@NonNull final ResourcesViewHolder holder, final int position, @NonNull final Resources model) {
-                holder.instiName.setText(model.getInstiName());
-                holder.instiPhone.setText(model.getInstiPhone());
-                holder.instiMail.setText(model.getInstiMail());
-                holder.instiAddress.setText(model.getInstiAddress());
-                holder.currVaccine.setText(model.getCurrVaccine());
-                holder.currOxygen.setText(model.getCurrOxygen());
-                holder.currICUBeds.setText(model.getCurrICUBeds());
-                holder.currNICUBeds.setText(model.getCurrNBeds());
-                holder.currPlasma.setText(model.getCurrPlasma());
-//                holder.itemView.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        String match_id = getRef(position).getKey();
-//
-//                        Intent matchIntent = new Intent(getActivity(), TeamPreviewActivity.class);
-//                        matchIntent.putExtra("match_id", match_id);
-//                        matchIntent.putExtra("teamName1", model.getTeamName1());
-//                        matchIntent.putExtra("teamName2", model.getTeamName2());
-//                        startActivity(matchIntent);
-//
-//
-//                    }
-//                });
+                holder.instiName.setText(model.getrInstiName());
+                holder.instiPhone.setText(model.getrInstiPhone());
+                holder.instiMail.setText(model.getrInstiMail());
+                holder.instiAddress.setText(model.getrInstiAddress());
+                holder.instiPincode.setText(model.getrInstipincode());
+                holder.currVaccine.setText(model.getrCurrVaccine());
+                holder.currOxygen.setText(model.getrCurrOxygen());
+                holder.currICUBeds.setText(model.getrCurrICUBeds());
+                holder.currNICUBeds.setText(model.getrCurrNBeds());
+                holder.currPlasma.setText(model.getrCurrPlasma());
 
             }
 
@@ -126,6 +113,7 @@ public class ResourcesFragmentPatient extends Fragment {
             @Override
             public ResourcesViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
                 View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.insti_card, viewGroup, false);
+                ResourcesViewHolder viewHolder = new ResourcesViewHolder(view);
                 return new ResourcesViewHolder(view);
             }
 
@@ -138,7 +126,7 @@ public class ResourcesFragmentPatient extends Fragment {
 
     public static class ResourcesViewHolder extends RecyclerView.ViewHolder {
 
-        TextView instiName, instiPhone, instiMail, instiAddress, currVaccine, currOxygen, currICUBeds, currNICUBeds, currPlasma;
+        TextView instiName, instiPhone, instiMail, instiAddress, instiPincode, currVaccine, currOxygen, currICUBeds, currNICUBeds, currPlasma;
 
         public ResourcesViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -146,6 +134,7 @@ public class ResourcesFragmentPatient extends Fragment {
             instiPhone = itemView.findViewById(R.id.instiPhoneRecycler);
             instiMail = itemView.findViewById(R.id.instiEmailRecycler);
             instiAddress = itemView.findViewById(R.id.instiAddressRecycler);
+            instiPincode = itemView.findViewById(R.id.instiPincodeRecycler);
             currVaccine = itemView.findViewById(R.id.RecyclerVaccine);
             currOxygen = itemView.findViewById(R.id.RecyclerOxygen);
             currICUBeds = itemView.findViewById(R.id.RecyclerICUBeds);

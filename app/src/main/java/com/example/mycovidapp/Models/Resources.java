@@ -2,91 +2,100 @@ package com.example.mycovidapp.Models;
 
 public class Resources {
 
-    public String instiName, instiphone, instimail, instiAddress, currVaccine, currICUBeds, currNBeds, currOxygen, currPlasma;
+    public String instiName, instiphone, instimail, instiAddress, instipincode, currVaccine, currICUBeds, currNBeds, currOxygen, currPlasma;
 
     public Resources(){}
 
-    public Resources(String instiName, String instiPhone, String instiMail, String instiAddress, String currVaccine, String currICUBeds, String currNBeds, String currOxygen, String currPlasma) {
-        this.instiName = instiName;
-        this.instiphone = instiPhone;
-        this.instimail = instiMail;
-        this.instiAddress = instiAddress;
-        this.currVaccine = currVaccine;
-        this.currICUBeds = currICUBeds;
-        this.currNBeds = currNBeds;
-        this.currOxygen = currOxygen;
-        this.currPlasma = currPlasma;
+    public String getrInstipincode() {
+        return instipincode;
     }
 
-    public String getInstiName() {
+    public void setrInstipincode(String instipincode) {
+        this.instipincode = instipincode;
+    }
+
+    public Resources(String rinstiName, String rinstiphone, String rinstimail, String rinstiAddress, String rinstiPincode, String rcurrVaccine, String rcurrICUBeds, String rcurrNBeds, String rcurrOxygen, String rcurrPlasma) {
+        this.instiName = rinstiName;
+        this.instiphone = rinstiphone;
+        this.instimail = rinstimail;
+        this.instiAddress = rinstiAddress;
+        this.currVaccine = rcurrVaccine;
+        this.currICUBeds = rcurrICUBeds;
+        this.currNBeds = rcurrNBeds;
+        this.currOxygen = rcurrOxygen;
+        this.currPlasma = rcurrPlasma;
+        this.instipincode = rinstiPincode;
+    }
+
+    public String getrInstiName() {
         return instiName;
     }
 
-    public void setInstiName(String instiName) {
+    public void setrInstiName(String instiName) {
         this.instiName = instiName;
     }
 
-    public String getInstiPhone() {
+    public String getrInstiPhone() {
         return instiphone;
     }
 
-    public void setInstiPhone(String instiPhone) {
+    public void setrInstiPhone(String instiPhone) {
         this.instiphone = instiPhone;
     }
 
-    public String getInstiMail() {
+    public String getrInstiMail() {
         return instiphone;
     }
 
-    public void setInstiMail(String instiMail) {
+    public void setrInstiMail(String instiMail) {
         this.instiphone = instiMail;
     }
 
-    public String getInstiAddress() {
+    public String getrInstiAddress() {
         return instiAddress;
     }
 
-    public void setInstiAddress(String instiAddress) {
+    public void setrInstiAddress(String instiAddress) {
         this.instiAddress = instiAddress;
     }
 
-    public String getCurrVaccine() {
+    public String getrCurrVaccine() {
         return currVaccine;
     }
 
-    public void setCurrVaccine(String currVaccine) {
+    public void setrCurrVaccine(String currVaccine) {
         this.currVaccine = currVaccine;
     }
 
-    public String getCurrICUBeds() {
+    public String getrCurrICUBeds() {
         return currICUBeds;
     }
 
-    public void setCurrICUBeds(String currICUBeds) {
+    public void setrCurrICUBeds(String currICUBeds) {
         this.currICUBeds = currICUBeds;
     }
 
-    public String getCurrNBeds() {
+    public String getrCurrNBeds() {
         return currNBeds;
     }
 
-    public void setCurrNBeds(String currNBeds) {
+    public void setrCurrNBeds(String currNBeds) {
         this.currNBeds = currNBeds;
     }
 
-    public String getCurrOxygen() {
+    public String getrCurrOxygen() {
         return currOxygen;
     }
 
-    public void setCurrOxygen(String currOxygen) {
+    public void setrCurrOxygen(String currOxygen) {
         this.currOxygen = currOxygen;
     }
 
-    public String getCurrPlasma() {
+    public String getrCurrPlasma() {
         return currPlasma;
     }
 
-    public void setCurrPlasma(String currPlasma) {
+    public void setrCurrPlasma(String currPlasma) {
         this.currPlasma = currPlasma;
     }
 }

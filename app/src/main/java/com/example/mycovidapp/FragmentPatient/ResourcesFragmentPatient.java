@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -20,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +41,9 @@ public class ResourcesFragmentPatient extends Fragment {
     private String mParam1;
     private String mParam2;
     private RecyclerView ResourcesRecyclerList;
-    private DatabaseReference ResourcesRef;
+    private DatabaseReference mDatabaseRef;
+    private ImageButton mSearchBtn;
+    private EditText mSearchField;
 
     public ResourcesFragmentPatient() {
         // Required empty public constructor
@@ -77,18 +83,36 @@ public class ResourcesFragmentPatient extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_resources_patient, container, false);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        ResourcesRef = FirebaseDatabase.getInstance().getReference().child("Institutes");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Institutes");
 
         ResourcesRecyclerList = (RecyclerView) root.findViewById(R.id.resourcesRecyclerList);
         ResourcesRecyclerList.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        mSearchBtn = (ImageButton) root.findViewById(R.id.searchBtn);
+        mSearchField = (EditText) root.findViewById(R.id.searchPincode);
+        mSearchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String searchText = mSearchField.getText().toString();
+
+                firebaseUserSearch(searchText);
+
+            }
+        });
+
         return root;
     }
 
-    public void onStart() {
+    private void firebaseUserSearch(String searchText) {
         super.onStart();
 
+        Toast.makeText(getActivity(), "Started Search", Toast.LENGTH_SHORT).show();
+
+        Query firebaseSearchQuery = mDatabaseRef.orderByChild("instipincode").startAt(searchText).endAt(searchText + "\uf8ff");
+
         FirebaseRecyclerOptions<Resources> options = new FirebaseRecyclerOptions.Builder<Resources>()
-                .setQuery(ResourcesRef, Resources.class)
+                .setQuery(firebaseSearchQuery, Resources.class)
                 .build();
 
         FirebaseRecyclerAdapter<Resources, ResourcesViewHolder> adapter = new FirebaseRecyclerAdapter<Resources, ResourcesViewHolder>(options) {

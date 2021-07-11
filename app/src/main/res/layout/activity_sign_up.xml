@@ -8,13 +8,22 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".SignUpActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         >
-    <TextView
+
+
+
+
+
+
+        <TextView
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -196,5 +205,7 @@
             android:text="Already have an account ? LOG IN"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
+
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>

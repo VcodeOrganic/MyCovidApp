@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.DoctorsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="5dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/matchCard1"
+        android:id="@+id/matchCard12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -18,7 +15,7 @@
         app:cardCornerRadius="5dp">
 
         <LinearLayout
-            android:id="@+id/team_1_lin_layout"
+            android:id="@+id/team_1_lin_layout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_border"
@@ -36,11 +33,11 @@
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:gravity="center"
-                    android:padding="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="5dp">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView82"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
 
@@ -51,11 +48,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:padding="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="5dp">
 
                     <EditText
-                        android:id="@+id/etDocname"
+                        android:id="@+id/etDocname2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -65,7 +62,7 @@
                         android:textSize="14sp" />
 
                     <EditText
-                        android:id="@+id/etDocPhone"
+                        android:id="@+id/etDocPhone2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -74,18 +71,18 @@
                         android:padding="10dp"
                         android:textSize="14sp" />
 
-<!--                    <EditText-->
-<!--                        android:id="@+id/etDocInsti"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:ems="10"-->
-<!--                        android:hint="Enter InstiName"-->
-<!--                        android:inputType="textPersonName"-->
-<!--                        android:padding="10dp"-->
-<!--                        android:textSize="14sp" />-->
+                    <!--                    <EditText-->
+                    <!--                        android:id="@+id/etDocInsti2"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:ems="10"-->
+                    <!--                        android:hint="Enter InstiName"-->
+                    <!--                        android:inputType="textPersonName"-->
+                    <!--                        android:padding="10dp"-->
+                    <!--                        android:textSize="14sp" />-->
 
                     <EditText
-                        android:id="@+id/etDocCallingHours"
+                        android:id="@+id/etDocCallingHours2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -97,8 +94,6 @@
                 </LinearLayout>
 
 
-
-
             </LinearLayout>
 
 
@@ -107,7 +102,7 @@
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

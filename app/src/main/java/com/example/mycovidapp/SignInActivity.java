@@ -47,7 +47,7 @@ public class SignInActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         if(task.isSuccessful()){
-                            Intent intent = new Intent(SignInActivity.this,MainActivity.class);
+                            Intent intent = new Intent(SignInActivity.this,PatientsActivity.class);
                             startActivity(intent);
                         }
                         else{
@@ -66,7 +66,7 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         if(auth.getCurrentUser()!= null){
-            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+            Intent intent = new Intent(SignInActivity.this, PatientsActivity.class);
             startActivity(intent);
         }
     }

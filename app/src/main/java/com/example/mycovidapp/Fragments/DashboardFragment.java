@@ -111,7 +111,6 @@ public class DashboardFragment extends Fragment {
                     TextView setName = (TextView) root.findViewById(R.id.textName);
                     setName.setText(Displayname);
 
-                    //Log.d("firebase1", "KYC: " + DisplayKYCStatus);
                     TextView setKYC = (TextView) root.findViewById(R.id.textKYC);
                     setKYC.setText(DisplayKYCStatus);
 
@@ -128,42 +127,6 @@ public class DashboardFragment extends Fragment {
                 @Override
                 public void onCancelled(DatabaseError databaseError) {}
             });
-
-
-
-
-
-
-//            String name = user.getDisplayName();
-//            mDatabase.child("Institutes").child(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-//                @Override
-//                public void onComplete(@NonNull Task<DataSnapshot> task) {
-//                    if (!task.isSuccessful()) {
-//                        Log.e("firebase", "Error getting data", task.getException());
-//                    }
-//                    else {
-//                        Log.d("firebase", String.valueOf(task.getResult().getValue()));
-//                        String instiVal = String.valueOf(task.getResult().getValue());
-//                        Log.d("firebase", instiVal);
-//                        String[] words=instiVal.split("insti");
-//
-//                        ArrayList<String> scripts = new ArrayList<String>();
-//                        for(String w:words){
-//                            Log.d("firebase", w);
-//                            scripts.add(w.substring(w.indexOf("=") + 1, w.indexOf(",")));
-//                        }
-//
-//                        String DisplayName = scripts.get(0);
-//                        String DisplayPhone = scripts.get(1);
-//                        String DisplayMail = scripts.get(2);
-//                        String DisplayAddress = scripts.get(4);
-//                        String DisplayPincode = scripts.get(5);
-//
-//
-//
-//                    }
-//                }
-//            });
         }
         else{
             Intent intent = new Intent(getActivity(), SignInInstitute.class);

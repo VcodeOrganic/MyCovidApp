@@ -6,15 +6,27 @@
     android:orientation="vertical"
     tools:context=".FragmentPatient.ResourcesFragmentPatient">
 
-
-    <EditText
-        android:id="@+id/editPincode"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <EditText
+        android:id="@+id/searchPincode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter your pincode"
         android:inputType="textPersonName" />
+
+    <ImageButton
+        android:id="@+id/searchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/search_icon" />
+</LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/resourcesRecyclerList"

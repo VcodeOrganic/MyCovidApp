@@ -24,52 +24,52 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/imageView82"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp">
+                    android:layout_height="70dp"
 
-                    <ImageView
-                        android:id="@+id/imageView82"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-
-                        app:srcCompat="@drawable/doctor" />
-                </LinearLayout>
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    app:srcCompat="@drawable/doctor" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="5dp">
+                    android:layout_weight="2"
+                    android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/etDocname2"
+                    <TextView
+                        android:id="@+id/docNameRecycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Enter Name"
-                        android:inputType="textPersonName"
                         android:padding="10dp"
-                        android:textSize="14sp" />
+                        android:text="Doctor Name" />
 
-                    <EditText
-                        android:id="@+id/etDocPhone2"
+                    <TextView
+                        android:id="@+id/docInstiRecycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Enter Phone"
-                        android:inputType="phone"
                         android:padding="10dp"
-                        android:textSize="14sp" />
+                        android:text="Doctor Institute Name" />
+
+                    <TextView
+                        android:id="@+id/docPhoneRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Doctor Phone" />
+
+                    <TextView
+                        android:id="@+id/docTimeRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Doctor Time" />
 
                     <!--                    <EditText-->
                     <!--                        android:id="@+id/etDocInsti2"-->
@@ -81,17 +81,16 @@
                     <!--                        android:padding="10dp"-->
                     <!--                        android:textSize="14sp" />-->
 
-                    <EditText
-                        android:id="@+id/etDocCallingHours2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Calling hours : eg 5PM-7PM"
-                        android:inputType="textPersonName"
-                        android:padding="10dp"
-                        android:textSize="14sp" />
-
                 </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:background="@drawable/custom_border_call"
+                     />
 
 
             </LinearLayout>
@@ -100,21 +99,5 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="end|bottom"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="call"
-        android:src="@drawable/adduser" />
 
 </RelativeLayout>

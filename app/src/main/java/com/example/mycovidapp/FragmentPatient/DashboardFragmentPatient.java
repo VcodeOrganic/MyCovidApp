@@ -1,14 +1,25 @@
 package com.example.mycovidapp.FragmentPatient;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.mycovidapp.R;
+import com.example.mycovidapp.SignInInstitute;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +36,8 @@ public class DashboardFragmentPatient extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private DatabaseReference mDatabase;
+    private String Displayname, DisplayMail, DisplayPhone, DisplayPincode, DisplayDOB;
 
     public DashboardFragmentPatient() {
         // Required empty public constructor
@@ -61,6 +74,41 @@ public class DashboardFragmentPatient extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard_patient, container, false);
+        View root = inflater.inflate(R.layout.fragment_dashboard_patient, container, false);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        if(user!=null){
+
+            mDatabase.child("Users").child(user.getUid()).addValueEventListener(new ValueEventListener() {
+
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Displayname = dataSnapshot.child("userName").getValue(String.class);
+                    DisplayMail = dataSnapshot.child("mail").getValue(String.class);
+                    DisplayPhone = dataSnapshot.child("phoneNo").getValue(String.class);
+                    DisplayPincode = dataSnapshot.child("pincode").getValue(String.class);
+                    DisplayDOB = dataSnapshot.child("dob").getValue(String.class);
+
+                    TextView setName = (TextView) root.findViewById(R.id.userName);
+                    setName.setText(Displayname);
+                    TextView setPhone = (TextView) root.findViewById(R.id.userPhone);
+                    setPhone.setText(DisplayPhone);
+                    TextView setEmail = (TextView) root.findViewById(R.id.userMail);
+                    setEmail.setText(DisplayMail);
+                    TextView setPincode = (TextView) root.findViewById(R.id.userPincode);
+                    setPincode.setText(DisplayPincode);
+                    TextView setDOB = (TextView) root.findViewById(R.id.userDOB);
+                    setDOB.setText(DisplayDOB);
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            });
+        }
+        else{
+            Intent intent = new Intent(getActivity(), SignInInstitute.class);
+            startActivity(intent);
+        }
+        return root;
     }
 }

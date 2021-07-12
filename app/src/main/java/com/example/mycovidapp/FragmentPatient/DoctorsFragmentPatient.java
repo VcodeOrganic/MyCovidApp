@@ -2,13 +2,27 @@ package com.example.mycovidapp.FragmentPatient;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.mycovidapp.Models.Doctors;
+import com.example.mycovidapp.Models.Resources;
 import com.example.mycovidapp.R;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +39,8 @@ public class DoctorsFragmentPatient extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RecyclerView DoctorRecyclerList;
+    private DatabaseReference mDatabaseRef;
 
     public DoctorsFragmentPatient() {
         // Required empty public constructor
@@ -61,6 +77,60 @@ public class DoctorsFragmentPatient extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_doctors_patient, container, false);
+        View root = inflater.inflate(R.layout.fragment_doctors_patient, container, false);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
+
+        DoctorRecyclerList = (RecyclerView) root.findViewById(R.id.doctorRecyclerList);
+        DoctorRecyclerList.setLayoutManager(new LinearLayoutManager(getContext()));
+        return root;
+    }
+
+    public void onStart(){
+        super.onStart();
+
+        FirebaseRecyclerOptions<Doctors> options = new FirebaseRecyclerOptions.Builder<Doctors>()
+                .setQuery(mDatabaseRef, Doctors.class)
+                .build();
+
+        FirebaseRecyclerAdapter<Doctors, DoctorsFragmentPatient.DoctorViewHolder> adapter = new FirebaseRecyclerAdapter<Doctors, DoctorsFragmentPatient.DoctorViewHolder>(options) {
+
+
+            @Override
+            protected void onBindViewHolder(@NonNull final DoctorsFragmentPatient.DoctorViewHolder holder, final int position, @NonNull final Doctors model) {
+                holder.docName.setText(model.getDocName());
+                holder.docInsti.setText(model.getDocInsti());
+                holder.docPhone.setText(model.getDocPhone());
+                holder.docTime.setText(model.getDocCallingHours());
+
+            }
+
+            @NonNull
+            @Override
+            public DoctorsFragmentPatient.DoctorViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.doctor_card, viewGroup, false);
+                DoctorsFragmentPatient.DoctorViewHolder viewHolder = new DoctorsFragmentPatient.DoctorViewHolder(view);
+                return new DoctorsFragmentPatient.DoctorViewHolder(view);
+            }
+
+
+        };
+
+        DoctorRecyclerList.setAdapter(adapter);
+        adapter.startListening();
+    }
+
+    public static class DoctorViewHolder extends RecyclerView.ViewHolder {
+
+        TextView docName, docInsti, docPhone, docTime;
+
+        public DoctorViewHolder(@NonNull View itemView) {
+            super(itemView);
+            docName = itemView.findViewById(R.id.docNameRecycler);
+            docInsti = itemView.findViewById(R.id.docInstiRecycler);
+            docPhone = itemView.findViewById(R.id.docPhoneRecycler);
+            docTime = itemView.findViewById(R.id.docTimeRecycler);
+
+        }
     }
 }

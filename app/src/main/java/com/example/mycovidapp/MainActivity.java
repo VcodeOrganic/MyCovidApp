@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //testing new remote
+
     private NavigationBarView.OnItemSelectedListener navListener = new NavigationBarView.OnItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {

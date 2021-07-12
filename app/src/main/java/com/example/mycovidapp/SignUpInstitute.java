@@ -61,7 +61,6 @@ public class SignUpInstitute extends AppCompatActivity {
                                     "0",
                                     "0",
                                     "0",
-                                    "0",
                                     "0"
                             );
                             String id = task.getResult().getUser().getUid();

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,8 +18,10 @@ import com.example.mycovidapp.MainActivity;
 import com.example.mycovidapp.Models.Institutes;
 import com.example.mycovidapp.R;
 import com.example.mycovidapp.SignInInstitute;
+import com.example.mycovidapp.VerificationInsti.VerificationActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -126,6 +129,15 @@ public class DashboardFragment extends Fragment {
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {}
+            });
+
+            Button mVerifyButton = (Button) root.findViewById(R.id.btnVerify);
+            mVerifyButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), VerificationActivity.class);
+                    startActivity(intent);
+                }
             });
         }
         else{

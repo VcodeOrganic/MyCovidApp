@@ -128,7 +128,6 @@ public class ResourcesFragmentPatient extends Fragment {
                 holder.currVaccine.setText(model.getrCurrVaccine());
                 holder.currOxygen.setText(model.getrCurrOxygen());
                 holder.currICUBeds.setText(model.getrCurrICUBeds());
-                holder.currNICUBeds.setText(model.getrCurrNBeds());
                 holder.currPlasma.setText(model.getrCurrPlasma());
 
             }
@@ -150,7 +149,7 @@ public class ResourcesFragmentPatient extends Fragment {
 
     public static class ResourcesViewHolder extends RecyclerView.ViewHolder {
 
-        TextView instiName, instiPhone, instiMail, instiAddress, instiPincode, currVaccine, currOxygen, currICUBeds, currNICUBeds, currPlasma;
+        TextView instiName, instiPhone, instiMail, instiAddress, instiPincode, currVaccine, currOxygen, currICUBeds, currPlasma;
 
         public ResourcesViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -162,7 +161,6 @@ public class ResourcesFragmentPatient extends Fragment {
             currVaccine = itemView.findViewById(R.id.RecyclerVaccine);
             currOxygen = itemView.findViewById(R.id.RecyclerOxygen);
             currICUBeds = itemView.findViewById(R.id.RecyclerICUBeds);
-            currNICUBeds = itemView.findViewById(R.id.RecyclerNICUBeds);
             currPlasma = itemView.findViewById(R.id.RecyclerPlasma);
 
         }

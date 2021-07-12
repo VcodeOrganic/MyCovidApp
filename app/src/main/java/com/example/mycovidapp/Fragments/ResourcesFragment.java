@@ -92,7 +92,6 @@ public class ResourcesFragment extends Fragment {
                     Displaycurrvaccine=dataSnapshot.child("currVaccine").getValue(String.class);
                     Displaycurroxygen=dataSnapshot.child("currOxygen").getValue(String.class);
                     DisplaycurrICUbeds=dataSnapshot.child("currICUBeds").getValue(String.class);
-                    DisplaycurrNbeds=dataSnapshot.child("currNBeds").getValue(String.class);
                     Displaycurrplasma=dataSnapshot.child("currPlasma").getValue(String.class);
 
                     TextView setCurrVaccine = (TextView) root.findViewById(R.id.currVaccines);
@@ -103,9 +102,6 @@ public class ResourcesFragment extends Fragment {
 
                     TextView setCurrICUBeds = (TextView) root.findViewById(R.id.currICUBeds);
                     setCurrICUBeds.setText(DisplaycurrICUbeds);
-
-                    TextView setCurrNBeds = (TextView) root.findViewById(R.id.currNBeds);
-                    setCurrNBeds.setText(DisplaycurrNbeds);
 
                     TextView setCurrPlasma = (TextView) root.findViewById(R.id.currPlasma);
                     setCurrPlasma.setText(Displaycurrplasma);
@@ -179,30 +175,6 @@ public class ResourcesFragment extends Fragment {
                             int value=currBeds-subBeds;
                             String totalBeds=Integer.toString(value);
                             mDatabase.child("Institutes").child(user.getUid()).child("currICUBeds").setValue(totalBeds);
-                        }
-                    });
-
-                    Button buttonAddNBeds = (Button) root.findViewById(R.id.addNBeds);
-                    buttonAddNBeds.setOnClickListener(new View.OnClickListener() {
-                        public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editNBeds);
-                            int addBeds = Integer.parseInt(mEdit.getText().toString());
-                            int currBeds= Integer.parseInt(DisplaycurrNbeds);
-                            int value=currBeds+addBeds;
-                            String totalBeds=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currNBeds").setValue(totalBeds);
-                        }
-                    });
-
-                    Button buttonSubNBeds = (Button) root.findViewById(R.id.subtractNBeds);
-                    buttonSubNBeds.setOnClickListener(new View.OnClickListener() {
-                        public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editNBeds);
-                            int subBeds = Integer.parseInt(mEdit.getText().toString());
-                            int currBeds= Integer.parseInt(DisplaycurrNbeds);
-                            int value=currBeds-subBeds;
-                            String totalBeds=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currNBeds").setValue(totalBeds);
                         }
                     });
 

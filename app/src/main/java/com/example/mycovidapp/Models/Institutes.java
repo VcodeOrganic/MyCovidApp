@@ -1,7 +1,7 @@
 package com.example.mycovidapp.Models;
 
 public class Institutes {
-    String InstiName, Instiphone, Instimail, Instipass, InstiID,  Instipincode, InstiAddress, KycStatus, CurrVaccine, CurrOxygen, CurrICUBeds, CurrNBeds, CurrPlasma;
+    String InstiName, Instiphone, Instimail, Instipass, InstiID,  Instipincode, InstiAddress, KycStatus, CurrVaccine, CurrOxygen, CurrICUBeds, CurrPlasma;
 
     public Institutes(String instiName, String instiphone, String instimail, String instipass, String instiID, String instipincode, String instiAddress, String kycStatus) {
         InstiName = instiName;
@@ -24,7 +24,7 @@ public class Institutes {
         InstiAddress = instiAddress;
     }
 
-    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instipincode, String instiAddress,String kycStatus, String currVaccine, String currOxygen, String currICUBeds, String currNBeds, String currPlasma) {
+    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instipincode, String instiAddress,String kycStatus, String currVaccine, String currOxygen, String currICUBeds, String currPlasma) {
         InstiName = instiName;
         Instiphone = instiphone;
         Instimail = instimail;
@@ -35,7 +35,6 @@ public class Institutes {
         CurrVaccine=currVaccine;
         CurrOxygen=currOxygen;
         CurrICUBeds=currICUBeds;
-        CurrNBeds=currNBeds;
         CurrPlasma=currPlasma;
     }
 
@@ -47,13 +46,6 @@ public class Institutes {
         CurrICUBeds = currICUBeds;
     }
 
-    public String getCurrNBeds() {
-        return CurrNBeds;
-    }
-
-    public void setCurrNBeds(String currNBeds) {
-        CurrNBeds = currNBeds;
-    }
 
     public String getCurrVaccine() {
         return CurrVaccine;

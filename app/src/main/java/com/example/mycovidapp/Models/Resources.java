@@ -2,7 +2,7 @@ package com.example.mycovidapp.Models;
 
 public class Resources {
 
-    public String instiName, instiphone, instimail, instiAddress, instipincode, currVaccine, currICUBeds, currNBeds, currOxygen, currPlasma;
+    public String instiName, instiphone, instimail, instiAddress, instipincode, currVaccine, currICUBeds, currOxygen, currPlasma;
 
     public Resources(){}
 
@@ -14,14 +14,13 @@ public class Resources {
         this.instipincode = instipincode;
     }
 
-    public Resources(String rinstiName, String rinstiphone, String rinstimail, String rinstiAddress, String rinstiPincode, String rcurrVaccine, String rcurrICUBeds, String rcurrNBeds, String rcurrOxygen, String rcurrPlasma) {
+    public Resources(String rinstiName, String rinstiphone, String rinstimail, String rinstiAddress, String rinstiPincode, String rcurrVaccine, String rcurrICUBeds, String rcurrOxygen, String rcurrPlasma) {
         this.instiName = rinstiName;
         this.instiphone = rinstiphone;
         this.instimail = rinstimail;
         this.instiAddress = rinstiAddress;
         this.currVaccine = rcurrVaccine;
         this.currICUBeds = rcurrICUBeds;
-        this.currNBeds = rcurrNBeds;
         this.currOxygen = rcurrOxygen;
         this.currPlasma = rcurrPlasma;
         this.instipincode = rinstiPincode;
@@ -73,14 +72,6 @@ public class Resources {
 
     public void setrCurrICUBeds(String currICUBeds) {
         this.currICUBeds = currICUBeds;
-    }
-
-    public String getrCurrNBeds() {
-        return currNBeds;
-    }
-
-    public void setrCurrNBeds(String currNBeds) {
-        this.currNBeds = currNBeds;
     }
 
     public String getrCurrOxygen() {

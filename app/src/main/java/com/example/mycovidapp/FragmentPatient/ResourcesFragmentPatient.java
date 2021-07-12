@@ -87,7 +87,7 @@ public class ResourcesFragmentPatient extends Fragment {
 
         ResourcesRecyclerList = (RecyclerView) root.findViewById(R.id.resourcesRecyclerList);
         ResourcesRecyclerList.setLayoutManager(new LinearLayoutManager(getContext()));
-
+        firebaseUserSearch("");
         mSearchBtn = (ImageButton) root.findViewById(R.id.searchBtn);
         mSearchField = (EditText) root.findViewById(R.id.searchPincode);
         mSearchBtn.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +107,7 @@ public class ResourcesFragmentPatient extends Fragment {
     private void firebaseUserSearch(String searchText) {
         super.onStart();
 
-        Toast.makeText(getActivity(), "Started Search", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "Started Search", Toast.LENGTH_SHORT).show();
 
         Query firebaseSearchQuery = mDatabaseRef.orderByChild("instipincode").startAt(searchText).endAt(searchText + "\uf8ff");
 

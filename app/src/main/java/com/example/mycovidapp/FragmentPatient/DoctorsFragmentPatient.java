@@ -1,8 +1,13 @@
 package com.example.mycovidapp.FragmentPatient;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,7 +47,8 @@ public class DoctorsFragmentPatient extends Fragment {
     private String mParam2;
     private RecyclerView DoctorRecyclerList;
     private DatabaseReference mDatabaseRef;
-
+    private static final Integer REQUEST_CODE = 1;
+    Button callBtn;
     public DoctorsFragmentPatient() {
         // Required empty public constructor
     }
@@ -86,6 +93,9 @@ public class DoctorsFragmentPatient extends Fragment {
         return root;
     }
 
+
+    //Performing action on button click
+
     public void onStart(){
         super.onStart();
 
@@ -120,7 +130,7 @@ public class DoctorsFragmentPatient extends Fragment {
         adapter.startListening();
     }
 
-    public static class DoctorViewHolder extends RecyclerView.ViewHolder {
+    public class DoctorViewHolder extends RecyclerView.ViewHolder {
 
         TextView docName, docInsti, docPhone, docTime;
 
@@ -131,6 +141,24 @@ public class DoctorsFragmentPatient extends Fragment {
             docPhone = itemView.findViewById(R.id.docPhoneRecycler);
             docTime = itemView.findViewById(R.id.docTimeRecycler);
 
+            itemView.findViewById(R.id.callBtn).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                        String number=docPhone.getText().toString();
+                        Intent callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel:"+number));
+                    if (ActivityCompat.checkSelfPermission( getActivity(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                        startActivity(callIntent);
+                    }
+                    else {
+                        ActivityCompat.requestPermissions(
+                                getActivity(),
+                                new String[]{Manifest.permission.CALL_PHONE},
+                                REQUEST_CODE);
+                    }
+
+                }
+            });
         }
     }
 }

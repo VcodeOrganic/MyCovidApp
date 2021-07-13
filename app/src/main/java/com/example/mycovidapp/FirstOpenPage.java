@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.mycovidapp.Maps.InstituteLocationActivity;
 import com.example.mycovidapp.databinding.ActivityFirstOpenPageBinding;
 import com.example.mycovidapp.databinding.ActivitySignUpBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,7 +26,7 @@ public class FirstOpenPage extends AppCompatActivity {
         binding.btnJoinUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FirstOpenPage.this,SignUpInstitute.class);
+                Intent intent = new Intent(FirstOpenPage.this, InstituteLocationActivity.class);
                 startActivity(intent);
             }
         });

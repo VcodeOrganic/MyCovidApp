@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCovidApp">
         <activity
+            android:name=".Maps.InstituteLocationActivity"
+            android:exported="true" />
+        <activity
             android:name=".Maps.MapViewPatients"
             android:exported="true" />
         <activity

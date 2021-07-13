@@ -98,15 +98,7 @@ public class SignUpInstitute extends AppCompatActivity {
             }
         });
 
-        binding.btnPlacePicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignUpInstitute.this, MainMaps.class);
-                startActivity(intent);
-                //PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
 
-            }
-        });
 
     }
 }

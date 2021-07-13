@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:fontFamily="@font/abeezee"
         android:text="Choose files" />
 
     <EditText
@@ -22,8 +23,9 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/btnChooseFiles"
         android:ems="10"
-        android:hint="Enter document name"
+        android:fontFamily="@font/abeezee"
 
+        android:hint="Enter document name"
         android:inputType="textPersonName" />
 
     <ImageView
@@ -52,6 +54,10 @@
         android:layout_centerHorizontal="true"
 
 
-        android:text="upload" />
+        android:drawableLeft="@drawable/upload"
+        android:fontFamily="@font/abeezee"
+        android:text="upload"
+        android:textColor="#03ac13"
+        app:backgroundTint="#FFFFFF" />
 
 </RelativeLayout>

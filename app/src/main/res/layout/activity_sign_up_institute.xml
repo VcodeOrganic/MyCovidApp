@@ -16,6 +16,7 @@
         android:orientation="vertical"
         android:gravity="center"
         >
+
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
@@ -23,6 +24,7 @@
 
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center|top"
             android:text="Welcome to MyCovidApp"
             android:textColor="#FFFFFF"
@@ -44,6 +46,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center|top"
             android:text="Join us to list your Institute
 "
@@ -61,12 +64,13 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
+            android:fontFamily="@font/abeezee"
             android:hint="Institute Name"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:shadowColor="#FFFFFF"
             android:textColor="#FFFEFE"
-            android:textColorHint="#E6DCDC" />
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/etInstiPhone"
@@ -78,12 +82,13 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
+            android:fontFamily="@font/abeezee"
             android:hint="Institute Landline no."
             android:inputType="phone"
             android:padding="10dp"
             android:shadowColor="#FFFFFF"
             android:textColor="#FFFEFE"
-            android:textColorHint="#E6DCDC" />
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/etInstiEmail"
@@ -95,11 +100,12 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
+            android:fontFamily="@font/abeezee"
             android:hint="Institute email address"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textColor="#FFFEFE"
-            android:textColorHint="#E6DCDC" />
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/etInstiPass"
@@ -111,11 +117,12 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
+            android:fontFamily="@font/abeezee"
             android:hint="Set Password"
             android:inputType="textPassword"
             android:padding="10dp"
             android:textColor="#FFFEFE"
-            android:textColorHint="#E6DCDC" />
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/etInstiPincode"
@@ -127,11 +134,12 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
+            android:fontFamily="@font/abeezee"
             android:hint="Pincode"
             android:inputType="number"
             android:padding="10dp"
             android:textColor="#FFFEFE"
-            android:textColorHint="#E6DCDC" />
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/etInstiAddress"
@@ -143,27 +151,27 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
+            android:fontFamily="@font/abeezee"
             android:hint="Institute address"
             android:inputType="textPostalAddress"
             android:padding="10dp"
             android:textColor="#FFFEFE"
-            android:textColorHint="#E6DCDC" />
+            android:textColorHint="#FFFFFF" />
 
         <Button
             android:id="@+id/btnRegisterInsti"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/edit"
+            android:fontFamily="@font/abeezee"
             android:text="register"
             android:textColor="#03ac13"
             app:backgroundTint="@color/white" />
-
-
-
 
 
         <TextView
@@ -171,8 +179,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center|top"
             android:text="Already registered ? LOG IN"
             android:textColor="#FFFFFF"

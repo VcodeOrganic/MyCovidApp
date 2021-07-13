@@ -18,6 +18,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center|top"
             android:text="Welcome to MyCovidApp"
             android:textColor="#FFFFFF"
@@ -39,6 +40,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center|top"
             android:text="Login to Patient Portal
 "
@@ -56,11 +58,12 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
+            android:fontFamily="@font/abeezee"
             android:hint="Email/phone"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textColor="#FFFEFE"
-            android:textColorHint="#E6DCDC" />
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/etPass"
@@ -72,21 +75,24 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
+            android:fontFamily="@font/abeezee"
             android:hint="Enter password"
             android:inputType="textPassword"
             android:padding="10dp"
             android:textColor="#FFFEFE"
-            android:textColorHint="#E6DCDC" />
+            android:textColorHint="#FFFFFF" />
 
         <Button
             android:id="@+id/btnLoginUser"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/enter"
+            android:fontFamily="@font/abeezee"
             android:text="login
 "
             android:textColor="#03ac13"
@@ -97,8 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center|top"
             android:text="Are you new ? REGISTER NOW"
             android:textColor="#FFFFFF"

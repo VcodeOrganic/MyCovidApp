@@ -23,6 +23,7 @@
         android:background="#ffffff"
         app:itemIconTint="@color/colorPrimary"
         app:itemTextColor="@color/colorPrimaryDark"
+        android:theme="@style/Widget.BottomNavigationView"
         app:labelVisibilityMode="labeled"/>
 
 </RelativeLayout>

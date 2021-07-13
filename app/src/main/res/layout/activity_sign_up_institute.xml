@@ -50,13 +50,27 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
+        <Button
+            android:id="@+id/btnPlacePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Pick institute location from maps"
+            android:textColor="#03ac13"
+            android:textSize="12sp"
+            app:backgroundTint="@color/white" />
+
         <EditText
             android:id="@+id/etInstiName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"

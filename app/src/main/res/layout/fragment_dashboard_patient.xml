@@ -32,7 +32,7 @@
             android:background="@drawable/custom_border"
             android:fontFamily="@font/abeezee"
             android:gravity="center"
-            android:text="Username"
+            android:text="Loading details..."
             android:textColor="#000000"
             android:textSize="20sp" />
     </LinearLayout>
@@ -80,6 +80,7 @@
                         android:fontFamily="@font/abeezee"
                         android:gravity="center"
                         android:padding="10dp"
+                        android:text="Loading details..."
                         android:textColor="#000000" />
                 </LinearLayout>
 
@@ -106,6 +107,7 @@
                         android:fontFamily="@font/abeezee"
                         android:gravity="center"
                         android:padding="10dp"
+                        android:text="Loading details..."
                         android:textColor="#000000" />
                 </LinearLayout>
 
@@ -114,9 +116,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:padding="10dp">
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -141,6 +141,7 @@
                         android:fontFamily="@font/abeezee"
                         android:gravity="center"
                         android:padding="10dp"
+                        android:text="Loading details..."
                         android:textColor="#000000" />
                 </LinearLayout>
 
@@ -167,6 +168,7 @@
                         android:fontFamily="@font/abeezee"
                         android:gravity="center"
                         android:padding="10dp"
+                        android:text="Loading details..."
                         android:textColor="#000000" />
                 </LinearLayout>
 

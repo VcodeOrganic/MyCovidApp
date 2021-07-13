@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.example.mycovidapp.Maps.InstituteLocationActivity;
 import com.example.mycovidapp.databinding.ActivityFirstOpenPageBinding;
-import com.example.mycovidapp.databinding.ActivitySignUpBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class FirstOpenPage extends AppCompatActivity {
@@ -38,7 +37,6 @@ public class FirstOpenPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         if(auth.getCurrentUser()!= null){
             Intent intent = new Intent(FirstOpenPage.this, MainActivity.class);
             startActivity(intent);

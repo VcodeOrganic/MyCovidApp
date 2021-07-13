@@ -33,7 +33,7 @@ public class PatientsActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnItemSelectedListener(navListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_patient, new DashboardFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_patient, new DashboardFragmentPatient()).commit();
 
         if (savedInstanceState == null) {
             bottomNav.setSelectedItemId(R.id.dashboard); // change to whichever id should be default

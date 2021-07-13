@@ -159,6 +159,24 @@ public class DoctorsFragmentPatient extends Fragment {
 
                 }
             });
+
+            itemView.findViewById(R.id.callText).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String number=docPhone.getText().toString();
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:"+number));
+                    if (ActivityCompat.checkSelfPermission( getActivity(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                        startActivity(callIntent);
+                    }
+                    else {
+                        ActivityCompat.requestPermissions(
+                                getActivity(),
+                                new String[]{Manifest.permission.CALL_PHONE},
+                                REQUEST_CODE);
+                    }
+                }
+            });
         }
     }
 }

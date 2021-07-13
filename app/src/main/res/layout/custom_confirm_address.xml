@@ -5,32 +5,75 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:layout_height="match_parent">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/abeezee"
+        android:padding="5dp"
         android:text="Use this location?"
         android:textColor="#000"
-        android:textSize="18dp"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Use this location?"
-        android:id="@+id/myAddress"
+        android:textSize="18dp"></TextView>
 
-        ></TextView>
     <TextView
+        android:id="@+id/myAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Latitude?"
-        android:id="@+id/myTVLatitude"
-        ></TextView>
-    <TextView
+        android:fontFamily="@font/abeezee"
+
+        android:padding="5dp"
+        android:text="Use this location?"
+        android:textColor="#000000"></TextView>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Longitude?"
-        android:id="@+id/myTVLongitude"
-        ></TextView>
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:fontFamily="@font/abeezee"
+            android:padding="5dp"
+            android:text="Latitude"
+            android:textColor="#000000"></TextView>
+
+        <TextView
+            android:id="@+id/myTVLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/abeezee"
+            android:padding="5dp"
+            android:text="TextView"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:fontFamily="@font/abeezee"
+            android:padding="5dp"
+            android:text="Longitude"
+            android:textColor="#000000"></TextView>
+
+        <TextView
+            android:id="@+id/myTVLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/abeezee"
+            android:padding="5dp"
+            android:text="TextView"
+            android:textColor="#000000" />
+    </LinearLayout>
 
     <fragment
         class="com.google.android.gms.maps.MapFragment"
@@ -47,23 +90,34 @@
         android:gravity="right"
 
         >
+
         <Button
-            android:layout_width="90dp"
+            android:id="@+id/Change"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+
+            android:layout_weight="1"
+            android:fontFamily="@font/abeezee"
             android:text="Change Location"
             android:textColor="@color/white"
-            android:layout_marginRight="20dp"
-            android:textSize="12dp"
-            android:id="@+id/Change"
+            android:textSize="12dp"></Button>
 
-            ></Button>
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select"
-            android:textColor="@color/white"
             android:id="@+id/Select"
-            ></Button>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/abeezee"
+            android:text="Select"
+            android:textColor="@color/white"></Button>
 
     </LinearLayout>
 

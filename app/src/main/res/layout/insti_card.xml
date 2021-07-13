@@ -47,9 +47,13 @@
                         android:id="@+id/RecyclerVaccine"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:fontFamily="@font/abeezee"
                         android:gravity="center"
-                        android:text="Vaccine" />
+                        android:padding="5dp"
+                        android:text="Vaccine"
+                        android:textColor="#000000" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -70,9 +74,13 @@
                         android:id="@+id/RecyclerOxygen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:fontFamily="@font/abeezee"
                         android:gravity="center"
-                        android:text="Oxygen" />
+                        android:padding="5dp"
+                        android:text="Oxygen"
+                        android:textColor="#000000" />
                 </LinearLayout>
 
 
@@ -95,9 +103,14 @@
                         android:id="@+id/RecyclerICUBeds"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/abeezee"
                         android:gravity="center"
-                        android:text="ICU Beds" />
+                        android:padding="5dp"
+                        android:text="Beds"
+                        android:textColor="#000000" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -116,9 +129,13 @@
                         android:id="@+id/RecyclerPlasma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:fontFamily="@font/abeezee"
                         android:gravity="center"
-                        android:text="Plasma" />
+                        android:padding="5dp"
+                        android:text="Plasma"
+                        android:textColor="#000000" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -129,40 +146,126 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/instiNameRecycler"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="TextView" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/instiPhoneRecycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="TextView" />
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/abeezee"
+                        android:text="Name"
+                        android:textColor="#000000" />
 
-                <TextView
-                    android:id="@+id/instiEmailRecycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="TextView" />
+                    <TextView
+                        android:id="@+id/instiNameRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="Name"
+                        android:padding="10dp"
+                        android:textColor="#000000" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/instiAddressRecycler"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="TextView" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/instiPincodeRecycler"
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/abeezee"
+                        android:text="Phone"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/instiPhoneRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="Phone"
+                        android:padding="10dp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="TextView" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/abeezee"
+                        android:text="Email"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/instiEmailRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="Email"
+                        android:padding="10dp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/abeezee"
+                        android:text="Address"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/instiAddressRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="Address"
+                        android:padding="10dp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/abeezee"
+                        android:text="Pincode"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/instiPincodeRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="Pincode"
+                        android:padding="10dp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

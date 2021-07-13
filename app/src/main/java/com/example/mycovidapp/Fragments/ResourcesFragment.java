@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mycovidapp.R;
 import com.example.mycovidapp.SignInInstitute;
@@ -113,8 +114,13 @@ public class ResourcesFragment extends Fragment {
                             int addVaccine = Integer.parseInt(mEdit.getText().toString());
                             int currVaccine= Integer.parseInt(Displaycurrvaccine);
                             int value=currVaccine+addVaccine;
-                            String totalVaccine=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currVaccine").setValue(totalVaccine);
+                            if(value>0) {
+                                String totalVaccine = Integer.toString(value);
+                                mDatabase.child("Institutes").child(user.getUid()).child("currVaccine").setValue(totalVaccine);
+                            }
+                            else{
+                                Toast.makeText(getActivity(), "Minimum no of vaccines can be 0", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
 
@@ -125,8 +131,13 @@ public class ResourcesFragment extends Fragment {
                             int subVaccine = Integer.parseInt(mEdit.getText().toString());
                             int currVaccine= Integer.parseInt(Displaycurrvaccine);
                             int value=currVaccine-subVaccine;
-                            String totalVaccine=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currVaccine").setValue(totalVaccine);
+                            if(value>=0){
+                                String totalVaccine=Integer.toString(value);
+                                mDatabase.child("Institutes").child(user.getUid()).child("currVaccine").setValue(totalVaccine);
+                            }else{
+                                Toast.makeText(getActivity(), "Minimum no of vaccines can be 0", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                     });
 
@@ -137,8 +148,14 @@ public class ResourcesFragment extends Fragment {
                             int addOxygen = Integer.parseInt(mEdit.getText().toString());
                             int currOxygen= Integer.parseInt(Displaycurroxygen);
                             int value=currOxygen+addOxygen;
-                            String totalOxygen=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currOxygen").setValue(totalOxygen);
+                            if(value>0) {
+                                String totalOxygen=Integer.toString(value);
+                                mDatabase.child("Institutes").child(user.getUid()).child("currOxygen").setValue(totalOxygen);
+                            }
+                            else{
+                                Toast.makeText(getActivity(), "Minimum no of vaccines can be 0", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                     });
 
@@ -149,8 +166,14 @@ public class ResourcesFragment extends Fragment {
                             int subOxygen = Integer.parseInt(mEdit.getText().toString());
                             int currOxygen= Integer.parseInt(Displaycurroxygen);
                             int value=currOxygen-subOxygen;
-                            String totalOxygen=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currOxygen").setValue(totalOxygen);
+                            if(value>0) {
+                                String totalOxygen=Integer.toString(value);
+                                mDatabase.child("Institutes").child(user.getUid()).child("currOxygen").setValue(totalOxygen);
+                            }
+                            else{
+                                Toast.makeText(getActivity(), "Minimum no of vaccines can be 0", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                     });
 
@@ -161,8 +184,14 @@ public class ResourcesFragment extends Fragment {
                             int addBeds = Integer.parseInt(mEdit.getText().toString());
                             int currBeds= Integer.parseInt(DisplaycurrICUbeds);
                             int value=currBeds+addBeds;
-                            String totalBeds=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currICUBeds").setValue(totalBeds);
+                            if(value>0) {
+                                String totalBeds=Integer.toString(value);
+                                mDatabase.child("Institutes").child(user.getUid()).child("currICUBeds").setValue(totalBeds);
+                            }
+                            else{
+                                Toast.makeText(getActivity(), "Minimum no of vaccines can be 0", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                     });
 
@@ -173,8 +202,14 @@ public class ResourcesFragment extends Fragment {
                             int subBeds = Integer.parseInt(mEdit.getText().toString());
                             int currBeds= Integer.parseInt(DisplaycurrICUbeds);
                             int value=currBeds-subBeds;
-                            String totalBeds=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currICUBeds").setValue(totalBeds);
+                            if(value>0) {
+                                String totalBeds=Integer.toString(value);
+                                mDatabase.child("Institutes").child(user.getUid()).child("currICUBeds").setValue(totalBeds);
+                            }
+                            else{
+                                Toast.makeText(getActivity(), "Minimum no of vaccines can be 0", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                     });
 
@@ -185,8 +220,14 @@ public class ResourcesFragment extends Fragment {
                             int addPlasma = Integer.parseInt(mEdit.getText().toString());
                             int currPlasma= Integer.parseInt(Displaycurrplasma);
                             int value=currPlasma+addPlasma;
-                            String totalPlasma=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currPlasma").setValue(totalPlasma);
+                            if(value>0) {
+                                String totalPlasma=Integer.toString(value);
+                                mDatabase.child("Institutes").child(user.getUid()).child("currPlasma").setValue(totalPlasma);
+                            }
+                            else{
+                                Toast.makeText(getActivity(), "Minimum no of vaccines can be 0", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                     });
 
@@ -197,8 +238,14 @@ public class ResourcesFragment extends Fragment {
                             int subPlasma = Integer.parseInt(mEdit.getText().toString());
                             int currPlasma= Integer.parseInt(Displaycurrplasma);
                             int value=currPlasma-subPlasma;
-                            String totalPlasma=Integer.toString(value);
-                            mDatabase.child("Institutes").child(user.getUid()).child("currPlasma").setValue(totalPlasma);
+                            if(value>0) {
+                                String totalPlasma=Integer.toString(value);
+                                mDatabase.child("Institutes").child(user.getUid()).child("currPlasma").setValue(totalPlasma);
+                            }
+                            else{
+                                Toast.makeText(getActivity(), "Minimum no of vaccines can be 0", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                     });
 

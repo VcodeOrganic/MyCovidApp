@@ -23,8 +23,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center"
             android:text="FOR INSTITUTES"
+            android:textColor="#000000"
             android:textSize="36sp" />
 
         <TextView
@@ -32,8 +34,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center"
             android:text="Have empty beds, sufficient oxygen cylinders, vaccines and other medical stuff to help people out in distress. Join us today to ensure that these medical facilities reach people in time to save lives."
+            android:textColor="#000000"
             android:textSize="18sp" />
 
         <Button
@@ -41,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/abeezee"
             android:text="JOIN US" />
     </LinearLayout>
 
@@ -61,8 +66,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center"
             android:text="FOR PATIENTS"
+            android:textColor="#000000"
             android:textSize="36sp" />
 
         <TextView
@@ -70,8 +77,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center"
             android:text="Welcome to Patient Portal, Your Medical Home on the Web With Patient Portal, you can connect with your doctor through a convenient, safe and secure environment."
+            android:textColor="#000000"
             android:textSize="18sp" />
 
         <Button
@@ -79,6 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/abeezee"
             android:text="AVAIL SERVICES"
             app:backgroundTint="#EA1212" />
     </LinearLayout>

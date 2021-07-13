@@ -1,9 +1,11 @@
 package com.example.mycovidapp.FragmentPatient;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mycovidapp.Maps.MapViewPatients;
 import com.example.mycovidapp.Models.Resources;
 import com.example.mycovidapp.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -43,6 +46,7 @@ public class ResourcesFragmentPatient extends Fragment {
     private RecyclerView ResourcesRecyclerList;
     private DatabaseReference mDatabaseRef;
     private ImageButton mSearchBtn;
+    private Button mMarkInstitutes;
     private EditText mSearchField;
 
     public ResourcesFragmentPatient() {
@@ -90,6 +94,16 @@ public class ResourcesFragmentPatient extends Fragment {
         firebaseUserSearch("");
         mSearchBtn = (ImageButton) root.findViewById(R.id.searchBtn);
         mSearchField = (EditText) root.findViewById(R.id.searchPincode);
+
+        mMarkInstitutes = (Button) root.findViewById(R.id.btnMarkInstitutes);
+        mMarkInstitutes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MapViewPatients.class);
+                startActivity(intent);
+            }
+        });
+
         mSearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

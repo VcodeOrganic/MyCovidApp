@@ -1,6 +1,10 @@
 package com.example.mycovidapp.Fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +37,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -94,11 +100,21 @@ public class DashboardFragment extends Fragment {
 
         if(user!=null){
 
+            Button mVerifyButton = (Button) root.findViewById(R.id.btnVerify);
+            mVerifyButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), VerificationActivity.class);
+                    startActivity(intent);
+                }
+            });
+
             //Toast.makeText(getActivity(), "fef", Toast.LENGTH_SHORT).show();
             mDatabase.child("Institutes").child(user.getUid()).addValueEventListener(new ValueEventListener() {
 
 
 
+                @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.d("firebase1", "Name2: ");
@@ -117,6 +133,19 @@ public class DashboardFragment extends Fragment {
                     TextView setKYC = (TextView) root.findViewById(R.id.textKYC);
                     setKYC.setText(DisplayKYCStatus);
 
+                    ImageView KYCImage = (ImageView) root.findViewById(R.id.imageKYC);
+
+                    if(DisplayKYCStatus.equals("NO") || DisplayKYCStatus.equals("PENDING")){
+                        KYCImage.setImageResource(R.drawable.warning);
+                        mVerifyButton.setVisibility(View.VISIBLE);
+                    }
+                    else{
+                        KYCImage.setImageResource(R.drawable.correct_svg);
+                        //mVerifyButton.setEnabled(false);
+                        mVerifyButton.setVisibility(View.GONE);
+                        //mVerifyButton.setText("Verified");
+                    }
+
                     TextView setPhone = (TextView) root.findViewById(R.id.textPhone);
                     setPhone.setText(DisplayPhone);
                     TextView setEmail = (TextView) root.findViewById(R.id.textEmail);
@@ -131,14 +160,7 @@ public class DashboardFragment extends Fragment {
                 public void onCancelled(DatabaseError databaseError) {}
             });
 
-            Button mVerifyButton = (Button) root.findViewById(R.id.btnVerify);
-            mVerifyButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), VerificationActivity.class);
-                    startActivity(intent);
-                }
-            });
+
         }
         else{
             Intent intent = new Intent(getActivity(), SignInInstitute.class);

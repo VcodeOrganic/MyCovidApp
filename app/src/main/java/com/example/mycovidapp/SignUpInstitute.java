@@ -67,7 +67,7 @@ public class SignUpInstitute extends AppCompatActivity {
                                             binding.etInstiEmail.getText().toString(),
                                             binding.etInstiPass.getText().toString(),
                                             binding.etInstiPincode.getText().toString(),
-                                            binding.etInstiAddress.getText().toString(), "NO",
+                                            binding.etInstiAddress.getText().toString(), "PENDING",
                                             "0",
                                             "0",
                                             "0",

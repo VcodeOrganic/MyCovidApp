@@ -43,11 +43,11 @@ public class Resources {
     }
 
     public String getrInstiMail() {
-        return instiphone;
+        return instimail;
     }
 
     public void setrInstiMail(String instiMail) {
-        this.instiphone = instiMail;
+        this.instimail = instiMail;
     }
 
     public String getrInstiAddress() {

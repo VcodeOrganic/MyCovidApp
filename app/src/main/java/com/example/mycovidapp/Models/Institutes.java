@@ -1,7 +1,7 @@
 package com.example.mycovidapp.Models;
 
 public class Institutes {
-    String InstiName, Instiphone, Instimail, Instipass, InstiID,  Instipincode, InstiAddress, KycStatus, CurrVaccine, CurrOxygen, CurrICUBeds, CurrPlasma;
+    String InstiName, Instiphone, Instimail, Instipass, InstiID,  Instipincode, InstiAddress, KycStatus, CurrVaccine, CurrOxygen, CurrICUBeds, CurrPlasma, Latitude, Longitude;
 
     public Institutes(String instiName, String instiphone, String instimail, String instipass, String instiID, String instipincode, String instiAddress, String kycStatus) {
         InstiName = instiName;
@@ -24,7 +24,7 @@ public class Institutes {
         InstiAddress = instiAddress;
     }
 
-    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instipincode, String instiAddress,String kycStatus, String currVaccine, String currOxygen, String currICUBeds, String currPlasma) {
+    public Institutes(String instiName, String instiphone, String instimail, String instipass, String instipincode, String instiAddress,String kycStatus, String currVaccine, String currOxygen, String currICUBeds, String currPlasma, String myLatitude, String myLongitude) {
         InstiName = instiName;
         Instiphone = instiphone;
         Instimail = instimail;
@@ -36,6 +36,24 @@ public class Institutes {
         CurrOxygen=currOxygen;
         CurrICUBeds=currICUBeds;
         CurrPlasma=currPlasma;
+        Latitude = myLatitude;
+        Longitude = myLongitude;
+    }
+
+    public String getMyLatitude() {
+        return Latitude;
+    }
+
+    public void setMyLatitude(String myLatitude) {
+       Latitude = myLatitude;
+    }
+
+    public String getMyLongitude() {
+        return Longitude;
+    }
+
+    public void setMyLongitude(String myLongitude) {
+        Longitude = myLongitude;
     }
 
     public String getCurrICUBeds() {

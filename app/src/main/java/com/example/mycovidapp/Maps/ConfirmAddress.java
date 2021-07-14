@@ -71,12 +71,11 @@ public class ConfirmAddress extends DialogFragment implements
 
         mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mapp);
         mapFragment.getMapAsync(this);
-        // Toast.makeText(getActivity(),mNum,Toast.LENGTH_LONG).show();
 
         SelectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),myLatitude.getText().toString(),Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(),myLatitude.getText().toString(),Toast.LENGTH_LONG).show();
                 Bundle bundle = new Bundle();
                 bundle.putString("Latitude_req",myLatitude.getText().toString());
                 bundle.putString("Longitude_req",myLongitude.getText().toString());
@@ -136,7 +135,7 @@ public class ConfirmAddress extends DialogFragment implements
                 new LatLng(Lat,Long), 16f);
         mMap.animateCamera(location);
         mMap.addMarker(markerOptions);
-        Log.d("status","success");
+//        Log.d("status","success");
     }
 
 

@@ -94,7 +94,6 @@ public class DashboardFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        //return inflater.inflate(R.layout.fragment_dashboard, container, false);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -108,11 +107,7 @@ public class DashboardFragment extends Fragment {
                     startActivity(intent);
                 }
             });
-
-            //Toast.makeText(getActivity(), "fef", Toast.LENGTH_SHORT).show();
             mDatabase.child("Institutes").child(user.getUid()).addValueEventListener(new ValueEventListener() {
-
-
 
                 @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
@@ -124,8 +119,6 @@ public class DashboardFragment extends Fragment {
                     DisplayPhone = dataSnapshot.child("instiphone").getValue(String.class);
                     DisplayPincode = dataSnapshot.child("instipincode").getValue(String.class);
                     DisplayKYCStatus = dataSnapshot.child("kycStatus").getValue(String.class);
-
-                    Log.d("firebase1", "Name: " + DisplayKYCStatus);
 
                     TextView setName = (TextView) root.findViewById(R.id.textName);
                     setName.setText(Displayname);

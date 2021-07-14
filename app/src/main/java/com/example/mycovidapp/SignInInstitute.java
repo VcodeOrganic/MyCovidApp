@@ -62,7 +62,6 @@ public class SignInInstitute extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         if(auth.getCurrentUser()!= null){
             Intent intent = new Intent(SignInInstitute.this, MainActivity.class);
             startActivity(intent);

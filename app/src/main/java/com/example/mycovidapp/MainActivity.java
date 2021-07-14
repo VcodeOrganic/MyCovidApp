@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         tv.setText("MyCovidApp"); // ActionBar title text
         tv.setTextSize(18);
         tv.setTextColor(Color.WHITE);
+        tv.setTypeface(typeface);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         actionBar.setCustomView(tv);
 

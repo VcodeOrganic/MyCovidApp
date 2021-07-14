@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_navigation_menu"
         android:background="#ffffff"
-        app:itemIconTint="@color/colorPrimary"
-        app:itemTextColor="@color/colorPrimaryDark"
+        app:itemIconTint="@color/select"
+        app:itemTextColor="@color/select"
         android:theme="@style/Widget.BottomNavigationView"
         app:labelVisibilityMode="labeled"/>
 

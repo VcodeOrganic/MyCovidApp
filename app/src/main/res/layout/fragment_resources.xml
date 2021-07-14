@@ -71,9 +71,8 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:fontFamily="@font/abeezee"
-                    android:hint="0"
+                    android:hint="Enter"
                     android:inputType="textPersonName"
-                    android:text="0"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -183,9 +182,8 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:fontFamily="@font/abeezee"
-                    android:hint="0"
+                    android:hint="Enter"
                     android:inputType="textPersonName"
-                    android:text="0"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -294,9 +292,8 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:fontFamily="@font/abeezee"
-                    android:hint="0"
+                    android:hint="Enter"
                     android:inputType="textPersonName"
-                    android:text="0"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -403,9 +400,8 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:fontFamily="@font/abeezee"
-                    android:hint="0"
+                    android:hint="Enter"
                     android:inputType="textPersonName"
-                    android:text="0"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 

@@ -10,6 +10,7 @@
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/activity_main.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/activity_main_maps.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/activity_map_view_patients.xml" value="0.35" />
+        <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/activity_patients.xml" value="0.35" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/activity_place_picker.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/activity_sign_up.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/activity_sign_up_institute.xml" value="0.35520833333333335" />
@@ -17,15 +18,17 @@
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/custom_confirm_address.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/doctor_card.xml" value="0.33" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/fragment_dashboard_patient.xml" value="0.35" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/fragment_doctors.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/fragment_resources.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/fragment_resources_patient.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/insti_card.xml" value="0.1" />
+        <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/layout/selector.xml" value="0.35" />
         <entry key="..\:/Users/Gaurav/StudioProjects/MyCovidApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.35520833333333335" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

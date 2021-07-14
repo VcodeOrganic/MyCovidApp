@@ -106,12 +106,16 @@ public class ResourcesFragment extends Fragment {
 
                     TextView setCurrPlasma = (TextView) root.findViewById(R.id.currPlasma);
                     setCurrPlasma.setText(Displaycurrplasma);
-
+                    EditText mEditVaccine = (EditText) root.findViewById(R.id.editVaccine);
                     Button buttonAddVaccine = (Button) root.findViewById(R.id.addVaccine);
                     buttonAddVaccine.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editVaccine);
-                            int addVaccine = Integer.parseInt(mEdit.getText().toString());
+                            int addVaccine = 0;
+                            try {
+                                addVaccine = Integer.parseInt(mEditVaccine.getText().toString());
+                            } catch (NumberFormatException nfe) {
+                                nfe.printStackTrace();
+                            }
                             int currVaccine= Integer.parseInt(Displaycurrvaccine);
                             int value=currVaccine+addVaccine;
                             if(value>0) {
@@ -127,8 +131,12 @@ public class ResourcesFragment extends Fragment {
                     Button buttonSubVaccine = (Button) root.findViewById(R.id.subtractVaccine);
                     buttonSubVaccine.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editVaccine);
-                            int subVaccine = Integer.parseInt(mEdit.getText().toString());
+                            int subVaccine = 0;
+                            try {
+                                subVaccine = Integer.parseInt(mEditVaccine.getText().toString());
+                            } catch (NumberFormatException nfe) {
+                                nfe.printStackTrace();
+                            }
                             int currVaccine= Integer.parseInt(Displaycurrvaccine);
                             int value=currVaccine-subVaccine;
                             if(value>=0){
@@ -141,11 +149,16 @@ public class ResourcesFragment extends Fragment {
                         }
                     });
 
+                    EditText mEditOxygen = (EditText) root.findViewById(R.id.editOxygen);
                     Button buttonAddOxygen = (Button) root.findViewById(R.id.addOxygen);
                     buttonAddOxygen.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editOxygen);
-                            int addOxygen = Integer.parseInt(mEdit.getText().toString());
+                            int addOxygen = 0;
+                            try {
+                                addOxygen = Integer.parseInt(mEditOxygen.getText().toString());
+                            } catch (NumberFormatException nfe) {
+                                nfe.printStackTrace();
+                            }
                             int currOxygen= Integer.parseInt(Displaycurroxygen);
                             int value=currOxygen+addOxygen;
                             if(value>0) {
@@ -162,8 +175,12 @@ public class ResourcesFragment extends Fragment {
                     Button buttonSubOxygen = (Button) root.findViewById(R.id.subtractOxygen);
                     buttonSubOxygen.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editOxygen);
-                            int subOxygen = Integer.parseInt(mEdit.getText().toString());
+                            int subOxygen = 0;
+                            try {
+                                subOxygen = Integer.parseInt(mEditOxygen.getText().toString());
+                            } catch (NumberFormatException nfe) {
+                                nfe.printStackTrace();
+                            }
                             int currOxygen= Integer.parseInt(Displaycurroxygen);
                             int value=currOxygen-subOxygen;
                             if(value>0) {
@@ -176,12 +193,16 @@ public class ResourcesFragment extends Fragment {
 
                         }
                     });
-
+                    EditText mEditBeds = (EditText) root.findViewById(R.id.editICUBeds);
                     Button buttonAddICUBeds = (Button) root.findViewById(R.id.addICUBeds);
                     buttonAddICUBeds.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editICUBeds);
-                            int addBeds = Integer.parseInt(mEdit.getText().toString());
+                            int addBeds = 0;
+                            try {
+                                addBeds = Integer.parseInt(mEditBeds.getText().toString());
+                            } catch (NumberFormatException nfe) {
+                                nfe.printStackTrace();
+                            }
                             int currBeds= Integer.parseInt(DisplaycurrICUbeds);
                             int value=currBeds+addBeds;
                             if(value>0) {
@@ -198,8 +219,12 @@ public class ResourcesFragment extends Fragment {
                     Button buttonSubICUBeds = (Button) root.findViewById(R.id.subtractICUBeds);
                     buttonSubICUBeds.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editICUBeds);
-                            int subBeds = Integer.parseInt(mEdit.getText().toString());
+                            int subBeds = 0;
+                            try {
+                                subBeds = Integer.parseInt(mEditBeds.getText().toString());
+                            } catch (NumberFormatException nfe) {
+                                nfe.printStackTrace();
+                            }
                             int currBeds= Integer.parseInt(DisplaycurrICUbeds);
                             int value=currBeds-subBeds;
                             if(value>0) {
@@ -213,11 +238,16 @@ public class ResourcesFragment extends Fragment {
                         }
                     });
 
+                    EditText mEditPlasma = (EditText) root.findViewById(R.id.editPlasma);
                     Button buttonAddPlasma = (Button) root.findViewById(R.id.addPlasma);
                     buttonAddPlasma.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editPlasma);
-                            int addPlasma = Integer.parseInt(mEdit.getText().toString());
+                            int addPlasma = 0;
+                            try {
+                                addPlasma = Integer.parseInt(mEditPlasma.getText().toString());
+                            } catch (NumberFormatException nfe) {
+                                nfe.printStackTrace();
+                            }
                             int currPlasma= Integer.parseInt(Displaycurrplasma);
                             int value=currPlasma+addPlasma;
                             if(value>0) {
@@ -234,8 +264,12 @@ public class ResourcesFragment extends Fragment {
                     Button buttonSubPlasma = (Button) root.findViewById(R.id.subtractPlasma);
                     buttonSubPlasma.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            EditText mEdit = (EditText) root.findViewById(R.id.editPlasma);
-                            int subPlasma = Integer.parseInt(mEdit.getText().toString());
+                            int subPlasma = 0;
+                            try {
+                                subPlasma = Integer.parseInt(mEditPlasma.getText().toString());
+                            } catch (NumberFormatException nfe) {
+                                nfe.printStackTrace();
+                            }
                             int currPlasma= Integer.parseInt(Displaycurrplasma);
                             int value=currPlasma-subPlasma;
                             if(value>0) {
